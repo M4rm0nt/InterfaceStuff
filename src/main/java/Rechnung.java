@@ -17,10 +17,12 @@ public class Rechnung {
     public BigDecimal getGesamtsumme() {
         BigDecimal gesamtsumme = BigDecimal.ZERO;
         for (Leistung leistung : leistungen) {
-            gesamtsumme = gesamtsumme.add(leistung.executeBerechneBetrag());
+            BigDecimal leistungGesamt = leistung.getPreis().add(leistung.executeBerechneBetrag());
+            gesamtsumme = gesamtsumme.add(leistungGesamt);
         }
         return gesamtsumme.setScale(2, RoundingMode.HALF_EVEN);
     }
+
 
     public BigDecimal getGesamtsummeOhneAufwand() {
         BigDecimal gesamtsummeOhneAufwand = BigDecimal.ZERO;

@@ -36,7 +36,7 @@ public class Leistung {
         return "Leistung: " +
                 "Beschreibung = '" + beschreibung + '\'' +
                 ", Preis = " + preis +
-                ", Preis inklusive Aufwand = " + betragInklAufwand;
+                ", Aufwand = " + betragInklAufwand;
     }
 
 }
