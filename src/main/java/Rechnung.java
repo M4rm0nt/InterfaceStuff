@@ -17,7 +17,7 @@ public class Rechnung {
     public BigDecimal getGesamtsumme() {
         BigDecimal gesamtsumme = BigDecimal.ZERO;
         for (Leistung leistung : leistungen) {
-            BigDecimal leistungGesamt = leistung.getPreis().add(leistung.executeBerechneBetrag());
+            BigDecimal leistungGesamt = leistung.getPreis().add(leistung.executeBerechneBetrag()).add(leistung.berechneSteuersatz());
             gesamtsumme = gesamtsumme.add(leistungGesamt);
         }
         return gesamtsumme.setScale(2, RoundingMode.HALF_EVEN);
